@@ -1,0 +1,79 @@
+﻿@model SistemaDeAgendamentoDeViagens.Models.Passageiro
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Passageiro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID_pas" />
+            <div class="form-group">
+                <label asp-for="Nome_pas" class="control-label"></label>
+                <input asp-for="Nome_pas" class="form-control" />
+                <span asp-validation-for="Nome_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data_nasc_pas" class="control-label"></label>
+                <input asp-for="Data_nasc_pas" class="form-control" />
+                <span asp-validation-for="Data_nasc_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexo_pas" class="control-label"></label>
+                <input asp-for="Sexo_pas" class="form-control" />
+                <span asp-validation-for="Sexo_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF_pas" class="control-label"></label>
+                <input asp-for="CPF_pas" class="form-control" />
+                <span asp-validation-for="CPF_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passaporte_pas" class="control-label"></label>
+                <input asp-for="Passaporte_pas" class="form-control" />
+                <span asp-validation-for="Passaporte_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UF_pas" class="control-label"></label>
+                <input asp-for="UF_pas" class="form-control" />
+                <span asp-validation-for="UF_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cidade_pas" class="control-label"></label>
+                <input asp-for="Cidade_pas" class="form-control" />
+                <span asp-validation-for="Cidade_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bairro_pas" class="control-label"></label>
+                <input asp-for="Bairro_pas" class="form-control" />
+                <span asp-validation-for="Bairro_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CEP_pas" class="control-label"></label>
+                <input asp-for="CEP_pas" class="form-control" />
+                <span asp-validation-for="CEP_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email_pas" class="control-label"></label>
+                <input asp-for="Email_pas" class="form-control" />
+                <span asp-validation-for="Email_pas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

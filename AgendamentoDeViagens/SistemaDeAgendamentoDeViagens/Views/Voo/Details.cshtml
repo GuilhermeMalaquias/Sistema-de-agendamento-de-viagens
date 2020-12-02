@@ -1,0 +1,48 @@
+﻿@model SistemaDeAgendamentoDeViagens.Models.Voo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Voo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Origem_voo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Origem_voo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Destino_voo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Destino_voo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_partida_voo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_partida_voo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_chegada_voo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_chegada_voo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Capacidade_voo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Capacidade_voo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID_voo">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

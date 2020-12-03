@@ -9,71 +9,105 @@
         <div class="col-3 align-self-start">
             <img src="~/css/img/user-icon-new.png" alt="Alternate Text" />
         </div>
-        <div class="col-9" id="nome-pas">
+        <div class="col-9 align-self-end" id="nome-pas">
             <h1>  @Html.DisplayFor(model => model.Nome_pas) </h1>
+        </div>
+            
+    </div>
+        
 </div>
+
+<hr />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.Data_nasc_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Data_nasc_pas)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">@Html.DisplayNameFor(model => model.Sexo_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Sexo_pas)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.CPF_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.CPF_pas)</h5>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div>
+<hr />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.Passaporte_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Passaporte_pas)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.UF_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.UF_pas)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.Cidade_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.Cidade_pas)</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Data_nasc_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Data_nasc_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Sexo_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Sexo_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CPF_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CPF_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Passaporte_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Passaporte_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UF_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UF_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cidade_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cidade_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Bairro_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Bairro_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CEP_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CEP_pas)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email_pas)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email_pas)
-        </dd>
-    </dl>
+<hr />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.Bairro_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Bairro_pas)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.CEP_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.CEP_pas)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header"> @Html.DisplayNameFor(model => model.Email_pas)</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.Email_pas)</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.PassageiroId">Edit</a> |

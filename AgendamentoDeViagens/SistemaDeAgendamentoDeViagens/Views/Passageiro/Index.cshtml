@@ -22,7 +22,6 @@
     @foreach (var item in Model)
     {
         <div class="col-md-4">
-
             <a class="card-details" asp-action="Details" asp-route-id="@item.PassageiroId">
                 <div class="card mb-4 " id="card-index">
                     <div class="card-body">
@@ -37,20 +36,26 @@
                             <p class="card-text"> @Html.DisplayFor(modelItem => item.CPF_pas)</p>
                             <p class="card-text"> @Html.DisplayFor(modelItem => item.Email_pas)</p>
                         </div>
-                        <div class="col d-flex align-items-end flex-column ">
-                            <img class="p-2" src="~/css/img/user-icon-new.png" height="100" width="100" style="border-radius:50px;" />
-
-                            <div class="d-flex mt-auto p-4 justify-content-start align-items-center">
-                                <div class="btn-group">
-                                    <a class="btn btn-sm" id="btn-pass-edit" asp-action="Edit" asp-route-id="@item.PassageiroId">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                </div>
-                                <div class="btn-group" style="margin-left: 5px;">
-                                    <a class="btn btn-sm " id="btn-pass-delete" asp-action="Delete" asp-route-id="@item.PassageiroId"><i class="fas fa-trash"></i></a>
+                            <div class="col d-flex align-items-end flex-column ">
+                                @if (item.Foto_pas != null || item.Foto_pas == "")
+                                {
+                                    <img class="p-1" src="~/Imagens/Passageiro/@item.Foto_pas" height="100" width="100" style="border-radius:50px;" />
+                                }
+                                else
+                                {
+                                    <img class="p-1" src="~/css/img/user-icon-new.png" height="100" width="100" style="border-radius:50px;" />
+                                }
+                                <div class="d-flex mt-auto p-4 justify-content-start align-items-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm" id="btn-pass-edit" asp-action="Edit" asp-route-id="@item.PassageiroId">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </div>
+                                    <div class="btn-group" style="margin-left: 5px;">
+                                        <a class="btn btn-sm " id="btn-pass-delete" asp-action="Delete" asp-route-id="@item.PassageiroId"><i class="fas fa-trash"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

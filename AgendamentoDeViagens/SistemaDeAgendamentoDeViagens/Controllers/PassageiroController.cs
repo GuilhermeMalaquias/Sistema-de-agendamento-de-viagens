@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeAgendamentoDeViagens.Data;
 using SistemaDeAgendamentoDeViagens.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,10 +14,12 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
     public class PassageiroController : Controller
     {
         private readonly ViagemContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public PassageiroController(ViagemContext context)
+        public PassageiroController(ViagemContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = hostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
@@ -28,22 +32,47 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult>Create ([Bind("Nome_pas, Data_nasc_pas, Sexo_pas, CPF_pas, Passaporte_pas, UF_pas, Cidade_pas, Bairro_pas, CEP_pas, Email_pas")]Passageiro passageiro)
+        public async Task<IActionResult>Create(PassageiroViewModel passageiro)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                string nomeUnicoArquivo = Uploadedfile(passageiro);
+                Passageiro pass = new Passageiro
                 {
-                    _context.Add(passageiro);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-            }
-            catch(DbUpdateException)
-            {
-                ModelState.AddModelError("", "Não foi possível inserir dados.");
+                    Nome_pas = passageiro.Nome_pas,
+                    Data_nasc_pas = passageiro.Data_nasc_pas,
+                    Sexo_pas = passageiro.Sexo_pas,
+                    CPF_pas = passageiro.CPF_pas,
+                    Passaporte_pas = passageiro.Passaporte_pas,
+                    UF_pas = passageiro.UF_pas,
+                    Cidade_pas = passageiro.Cidade_pas,
+                    Bairro_pas = passageiro.Bairro_pas,
+                    CEP_pas = passageiro.CEP_pas,
+                    Email_pas = passageiro.Email_pas,
+                    Foto_pas = nomeUnicoArquivo,
+                };
+                _context.Add(pass);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
             return View(passageiro);
+        }
+           
+           
+        private string Uploadedfile(PassageiroViewModel passageiro)
+        {
+            string nomeUnicoArquivo = null;
+            if (passageiro.Foto_pas != null)
+            {
+                string pastasFotos = Path.Combine(_webHostEnvironment.WebRootPath, "Imagens/Passageiro");
+                nomeUnicoArquivo = Guid.NewGuid().ToString() + "_" + passageiro.Foto_pas.FileName;
+                string caminhoArquivo = Path.Combine(pastasFotos, nomeUnicoArquivo);
+                using (var fileStream = new FileStream(caminhoArquivo, FileMode.Create))
+                {
+                    passageiro.Foto_pas.CopyTo(fileStream);
+                }
+            }
+            return nomeUnicoArquivo;
         }
 
         public async Task<IActionResult>Edit(long? id)

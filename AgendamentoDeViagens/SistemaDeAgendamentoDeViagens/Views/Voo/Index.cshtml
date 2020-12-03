@@ -27,7 +27,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Data_chegada_voo)
             </th>
-            
+            <th>
+                @Html.DisplayNameFor(model => model.Top_voo)
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -49,7 +52,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Data_chegada_voo)
             </td>
-            
+            <td>
+                @Html.DisplayFor(modelItem => item.Top_voo)
+            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.VooId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.VooId">Details</a> |

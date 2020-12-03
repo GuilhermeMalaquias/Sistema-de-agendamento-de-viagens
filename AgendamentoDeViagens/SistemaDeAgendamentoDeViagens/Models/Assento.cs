@@ -8,8 +8,8 @@ namespace SistemaDeAgendamentoDeViagens.Models
 {
     public class Assento
     {
-        [Key]
-        public long? ID_ass { get; set; }
+        
+        public long? AssentoId { get; set; }
 
         [Required]
         public int Numero_ass { get; set; }

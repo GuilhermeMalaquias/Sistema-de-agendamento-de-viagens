@@ -112,11 +112,14 @@ body {
     font-size: 14px;
 }
 
-
-.navbar-nav{
-    margin-left:68%;
-
+.nav-link:hover {
+    color: #66ccff;
 }
+
+
+.navbar-nav {
+        margin-left: 68%;
+    }
 
 .btn-1 {
     color: white;
@@ -252,6 +255,8 @@ a.card-details:link{
 #nome-pas{
     color: white;
     text-transform: uppercase;
-    align-items: end;
-    justify-content: start;
+}
+
+.text-right{
+    color: white;
 }

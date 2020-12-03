@@ -12,7 +12,7 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID_res" />
+            <input type="hidden" asp-for="ReservaId" />
             <div class="form-group">
                 <label asp-for="Data_res" class="control-label"></label>
                 <input asp-for="Data_res" class="form-control" />
@@ -29,16 +29,16 @@
                 <span asp-validation-for="Preco_res" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ID_pas" class="control-label"></label>
-                <select asp-for="ID_pas" class="form-control" asp-items="@ViewBag.Passageiros">
+                <label asp-for="PassageiroId" class="control-label"></label>
+                <select asp-for="PassageiroId" class="form-control" asp-items="@ViewBag.Passageiros">
                 </select>
-                <span asp-validation-for="ID_pas" class="text-danger"></span>
+                <span asp-validation-for="PassageiroId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ID_voo" class="control-label"></label>
-                <select asp-for="ID_voo" class="form-control" asp-items="@ViewBag.Voos">
+                <label asp-for="VooId" class="control-label"></label>
+                <select asp-for="VooId" class="form-control" asp-items="@ViewBag.Voos">
                 </select>
-                <span asp-validation-for="ID_voo" class="text-danger"></span>
+                <span asp-validation-for="VooId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Voo.Origem_voo" class="control-label"></label>

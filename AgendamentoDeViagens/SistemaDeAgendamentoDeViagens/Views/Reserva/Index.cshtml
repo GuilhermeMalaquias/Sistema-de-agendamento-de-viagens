@@ -31,29 +31,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data_res)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Linha_aer_res)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Preco_res)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Voo.Destino_voo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID_res">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID_res">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID_res">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data_res)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Linha_aer_res)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco_res)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voo.Destino_voo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ReservaId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ReservaId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ReservaId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

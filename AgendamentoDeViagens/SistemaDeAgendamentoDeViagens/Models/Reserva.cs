@@ -9,7 +9,7 @@ namespace SistemaDeAgendamentoDeViagens.Models
     public class Reserva
     {
         [Key]
-        public long? ID_res { get; set; }
+        public long? ReservaId { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]
@@ -26,11 +26,11 @@ namespace SistemaDeAgendamentoDeViagens.Models
 
 
         public Passageiro Passageiro { get; set; }
-        public long? ID_pas { get; set; }
+        public long? PassageiroId { get; set; }
        
         
         public Voo Voo { get; set; }
-        public long? ID_voo { get; set; }
+        public long? VooId { get; set; }
     
         
 

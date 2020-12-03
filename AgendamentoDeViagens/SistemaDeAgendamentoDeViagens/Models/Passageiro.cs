@@ -9,7 +9,7 @@ namespace SistemaDeAgendamentoDeViagens.Models
     public class Passageiro
     {
         [Key]
-        public long? ID_pas { get; set; }
+        public long? PassageiroId { get; set; }
 
         [Required]
         [StringLength(42)]

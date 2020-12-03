@@ -19,7 +19,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Voos.OrderBy(c => c.ID_voo).ToListAsync());
+            return View(await _context.Voos.OrderBy(c => c.VooId).ToListAsync());
         }
 
         public IActionResult Create()
@@ -53,7 +53,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 return NotFound();
             }
 
-            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.ID_voo == id);
+            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.VooId == id);
 
             if(voo == null)
             {
@@ -65,7 +65,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         [ValidateAntiForgeryToken]
          public async Task<IActionResult> Edit(long? id, [Bind("ID_voo, Origem_voo, Destino_voo, Descricao_voo, Data_partida_voo, Data_chegada_voo, Capacidade_voo")]Voo voo)
         {
-            if(id != voo.ID_voo)
+            if(id != voo.VooId)
             {
                 return NotFound();
             }
@@ -78,7 +78,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 }
                 catch(DbUpdateConcurrencyException)
                 {
-                    if(!VooExists(voo.ID_voo))
+                    if(!VooExists(voo.VooId))
                     {
                         return NotFound();
                     }
@@ -93,7 +93,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         }
         public bool VooExists(long? id)
         {
-            return _context.Voos.Any(e => e.ID_voo == id);
+            return _context.Voos.Any(e => e.VooId == id);
         }
 
 
@@ -104,7 +104,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 return NotFound();
             }
 
-            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.ID_voo == id);
+            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.VooId == id);
 
             if(voo == null)
             {
@@ -121,7 +121,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 return NotFound();
             }
 
-            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.ID_voo == id);
+            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.VooId == id);
 
             if(voo ==null)
             {
@@ -133,7 +133,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id)
         {
-            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.ID_voo == id);
+            var voo = await _context.Voos.SingleOrDefaultAsync(m => m.VooId == id);
             _context.Voos.Remove(voo);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

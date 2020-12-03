@@ -28,16 +28,16 @@
                 <span asp-validation-for="Preco_res" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ID_voo" class="control-label">Destino</label>
-                <select asp-for="ID_voo" class="form-control" asp-items="@(new SelectList(ViewBag.Voos,"ID_voo", "Destino_voo"))">
+                <label asp-for="VooId" class="control-label">Destino</label>
+                <select asp-for="VooId" class="form-control" asp-items="@(new SelectList(ViewBag.Voos,"VooId", "Destino_voo"))">
                 </select>
-                <span asp-validation-for="ID_voo" class="text-danger"></span>
+                <span asp-validation-for="VooId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ID_pas" class="control-label">Passaporte</label>
-                <select asp-for="ID_pas" class="form-control" asp-items="@(new SelectList(ViewBag.Passageiros,"ID_pas", "Passaporte_pas"))">
+                <label asp-for="PassageiroId" class="control-label">Passaporte</label>
+                <select asp-for="PassageiroId" class="form-control" asp-items="@(new SelectList(ViewBag.Passageiros,"PassageiroId", "Passaporte_pas"))">
                 </select>
-                <span asp-validation-for="ID_pas" class="text-danger"></span>
+                <span asp-validation-for="PassageiroId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

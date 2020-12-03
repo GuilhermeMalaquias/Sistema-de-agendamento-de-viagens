@@ -9,7 +9,7 @@ namespace SistemaDeAgendamentoDeViagens.Models
     public class Voo
     {
         [Key]
-        public long? ID_voo { get; set; }
+        public long? VooId { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -30,9 +30,6 @@ namespace SistemaDeAgendamentoDeViagens.Models
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime? Data_chegada_voo { get; set; }
-
-        [Required]
-        public int Capacidade_voo { get; set; }
 
         public virtual ICollection<Reserva> Reservas { get; set; }
     }

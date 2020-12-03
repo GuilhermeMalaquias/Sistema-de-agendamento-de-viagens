@@ -19,24 +19,24 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Reservas.Include(p => p.Passageiro).Include(v => v.Voo).OrderBy(r => r.ID_res).ToListAsync());
+            return View(await _context.Reservas.Include(p => p.Passageiro).Include(v => v.Voo).OrderBy(r => r.ReservaId).ToListAsync());
         }
 
         public IActionResult Create()
         {
             var passageiros = _context.Passageiros.OrderBy(i => i.Passaporte_pas).ToList();
-            passageiros.Insert(0, new Passageiro() { ID_pas = 0, Passaporte_pas = "[Selecione o passageiro]"});
+            passageiros.Insert(0, new Passageiro() { PassageiroId = 0, Passaporte_pas = "[Selecione o passageiro]"});
             ViewBag.Passageiros = passageiros;
 
             var voos = _context.Voos.OrderBy(i => i.Destino_voo).ToList();
-            voos.Insert(0, new Voo() {ID_voo = 0, Destino_voo = "[Selecione o Destino]"});
+            voos.Insert(0, new Voo() {VooId = 0, Destino_voo = "[Selecione o Destino]"});
             ViewBag.Voos = voos;
 
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Data_res, Linha_aer_res, Preco_res, ID_pas, ID_voo")] Reserva reserva)
+        public async Task<IActionResult> Create([Bind("Data_res, Linha_aer_res, Preco_res, PassageiroId, VooId")] Reserva reserva)
         {
             try
             {
@@ -62,21 +62,21 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 return NotFound();
             }
 
-            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ID_res == id);
+            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ReservaId == id);
 
             if(reserva == null)
             {
                 return NotFound();
             }
-            ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "ID_pas", "Passaporte_pas", reserva.ID_pas);
-            ViewBag.Voos = new SelectList(_context.Voos.OrderBy(i => i.Destino_voo), "ID_voo", "Destino_voo", reserva.ID_voo);
+            ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "ID_pas", "Passaporte_pas", reserva.PassageiroId);
+            ViewBag.Voos = new SelectList(_context.Voos.OrderBy(i => i.Destino_voo), "ID_voo", "Destino_voo", reserva.VooId);
             return View(reserva);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("ID_res, Data_res, Linha_aer_res, Preco_res, ID_pas")]Reserva reserva)
         {
-            if(id != reserva.ID_res)
+            if(id != reserva.ReservaId)
             {
                 return NotFound();
             }
@@ -89,7 +89,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 }
                 catch(DbUpdateConcurrencyException)
                 {
-                    if(!ReservaExists(reserva.ID_res))
+                    if(!ReservaExists(reserva.ReservaId))
                     {
                         return NotFound();
                     }
@@ -100,13 +100,13 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "ID_pas", "Passaporte_pas", reserva.ID_pas);
+            ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "ID_pas", "Passaporte_pas", reserva.PassageiroId);
             return View(reserva);
         }
 
         public bool ReservaExists(long? id)
         {
-            return _context.Reservas.Any(e => e.ID_res == id);
+            return _context.Reservas.Any(e => e.ReservaId == id);
         }
 
 
@@ -117,10 +117,10 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 return NotFound();
             }
 
-            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ID_res == id);
+            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ReservaId == id);
 
-            _context.Passageiros.Where(i => reserva.ID_pas == i.ID_pas).Load();
-            _context.Voos.Where(i => reserva.ID_voo == i.ID_voo).Load();
+            _context.Passageiros.Where(i => reserva.PassageiroId == i.PassageiroId).Load();
+            _context.Voos.Where(i => reserva.VooId == i.VooId).Load();
 
             if (reserva == null)
             {
@@ -137,7 +137,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                 return NotFound();
             }
 
-            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ID_res == id);
+            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ReservaId == id);
 
             if(reserva == null)
             {
@@ -149,7 +149,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long? id)
         {
-            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ID_res == id);
+            var reserva = await _context.Reservas.SingleOrDefaultAsync(m => m.ReservaId == id);
             _context.Reservas.Remove(reserva);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

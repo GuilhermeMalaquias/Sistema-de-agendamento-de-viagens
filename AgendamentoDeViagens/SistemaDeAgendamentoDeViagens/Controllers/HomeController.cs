@@ -4,23 +4,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using SistemaDeAgendamentoDeViagens.Data;
 using SistemaDeAgendamentoDeViagens.Models;
 
 namespace SistemaDeAgendamentoDeViagens.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ViagemContext _context;
+        public HomeController(ViagemContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Voos.OrderBy(c => c.VooId).ToListAsync());
         }
 
         public IActionResult Privacy()

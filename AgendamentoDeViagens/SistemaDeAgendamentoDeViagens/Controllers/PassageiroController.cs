@@ -61,7 +61,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult>Edit(long? id, [Bind("ID_pas, Nome_pas, Data_nasc_pas, Sexo_pas, CPF_pas, Passaporte_pas, UF_pas, Cidade_pas, Bairro_pas, CEP_pas, Email_pas")]Passageiro passageiro)
+        public async Task<IActionResult>Edit(long? id, [Bind("PassageiroId, Nome_pas, Data_nasc_pas, Sexo_pas, CPF_pas, Passaporte_pas, UF_pas, Cidade_pas, Bairro_pas, CEP_pas, Email_pas")]Passageiro passageiro)
         {
             if(id != passageiro.PassageiroId)
             {

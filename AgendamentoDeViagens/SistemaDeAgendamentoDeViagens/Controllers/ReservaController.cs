@@ -68,13 +68,13 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "ID_pas", "Passaporte_pas", reserva.PassageiroId);
-            ViewBag.Voos = new SelectList(_context.Voos.OrderBy(i => i.Destino_voo), "ID_voo", "Destino_voo", reserva.VooId);
+            ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "PassageiroId", "Passaporte_pas", reserva.PassageiroId);
+            ViewBag.Voos = new SelectList(_context.Voos.OrderBy(i => i.Destino_voo), "VooId", "Destino_voo", reserva.VooId);
             return View(reserva);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("ID_res, Data_res, Linha_aer_res, Preco_res, ID_pas")]Reserva reserva)
+        public async Task<IActionResult> Edit(long? id, [Bind("ReservaId, Data_res, Linha_aer_res, Preco_res, PassageiroId, VooId")]Reserva reserva)
         {
             if(id != reserva.ReservaId)
             {
@@ -98,15 +98,17 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                         throw;
                     }
                 }
+                ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "PassageiroId", "Passaporte_pas", reserva.PassageiroId);
+                ViewBag.Voos = new SelectList(_context.Voos.OrderBy(i => i.Destino_voo), "VooId", "Destino_voo", reserva.VooId);
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Passageiros = new SelectList(_context.Passageiros.OrderBy(i => i.Passaporte_pas), "ID_pas", "Passaporte_pas", reserva.PassageiroId);
+           
             return View(reserva);
         }
 
         public bool ReservaExists(long? id)
         {
-            return _context.Reservas.Any(e => e.ReservaId == id);
+            return _context.Passageiros.Any(e => e.PassageiroId == id);
         }
 
 

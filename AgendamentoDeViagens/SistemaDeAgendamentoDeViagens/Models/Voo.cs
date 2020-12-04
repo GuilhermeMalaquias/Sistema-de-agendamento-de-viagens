@@ -30,8 +30,6 @@ namespace SistemaDeAgendamentoDeViagens.Models
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime? Data_chegada_voo { get; set; }
-        [Required]
-        public bool Top_voo { get; set; }
 
         public virtual ICollection<Reserva> Reservas { get; set; }
     }

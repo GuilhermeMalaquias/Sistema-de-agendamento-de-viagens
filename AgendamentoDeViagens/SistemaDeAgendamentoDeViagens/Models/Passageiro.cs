@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -50,7 +49,6 @@ namespace SistemaDeAgendamentoDeViagens.Models
         [Required]
         [StringLength(100)]
         public string Email_pas { get; set; }
-        public string? Foto_pas { get; set; }
 
 
         public virtual ICollection<Reserva> Reservas { get; set;}

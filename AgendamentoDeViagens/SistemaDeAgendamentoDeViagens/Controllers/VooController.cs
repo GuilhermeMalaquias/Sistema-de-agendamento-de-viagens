@@ -28,7 +28,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Top_voo, Origem_voo, Destino_voo, Descricao_voo, Data_partida_voo, Data_chegada_voo, Capacidade_voo")]Voo voo)
+        public async Task<IActionResult> Create([Bind("Origem_voo, Destino_voo, Descricao_voo, Data_partida_voo, Data_chegada_voo, Capacidade_voo")]Voo voo)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-         public async Task<IActionResult> Edit(long? id, [Bind("Top_voo,VooId, Origem_voo, Destino_voo, Descricao_voo, Data_partida_voo, Data_chegada_voo, Capacidade_voo")]Voo voo)
+         public async Task<IActionResult> Edit(long? id, [Bind("VooId, Origem_voo, Destino_voo, Descricao_voo, Data_partida_voo, Data_chegada_voo, Capacidade_voo")]Voo voo)
         {
             if(id != voo.VooId)
             {

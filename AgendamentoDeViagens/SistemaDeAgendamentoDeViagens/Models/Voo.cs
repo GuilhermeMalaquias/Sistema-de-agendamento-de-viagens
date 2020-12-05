@@ -32,5 +32,7 @@ namespace SistemaDeAgendamentoDeViagens.Models
         public DateTime? Data_chegada_voo { get; set; }
 
         public virtual ICollection<Reserva> Reservas { get; set; }
+
+        public virtual ICollection<AssentoVoo> AssentoVoos { get; set; }
     }
 }

@@ -35,6 +35,6 @@ namespace SistemaDeAgendamentoDeViagens.Models
 
         public virtual ICollection<Reserva> Reservas { get; set; }
 
-        public virtual IList<Assento> Assentos { get; set; }
+        public virtual ICollection<AssentoVoo> AssentoVoos { get; set; }
     }
 }

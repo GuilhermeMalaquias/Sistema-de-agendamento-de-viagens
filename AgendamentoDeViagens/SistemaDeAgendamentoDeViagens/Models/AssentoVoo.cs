@@ -8,11 +8,13 @@ namespace SistemaDeAgendamentoDeViagens.Models
     public class AssentoVoo
     {
         public long? Numero_ass { get; set; }
+        public Assento Assentos { get; set; }
+
 
         public long? VooId { get; set; }
-
-
-        public Assento Assentos { get; set; }
         public Voo Voos { get; set; }
+
+        
+        
     }
 }

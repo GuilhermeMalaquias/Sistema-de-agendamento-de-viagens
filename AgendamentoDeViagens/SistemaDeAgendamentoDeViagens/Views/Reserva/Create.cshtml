@@ -18,11 +18,6 @@
                 <span asp-validation-for="Data_res" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Linha_aer_res" class="control-label"></label>
-                <input asp-for="Linha_aer_res" class="form-control" />
-                <span asp-validation-for="Linha_aer_res" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Preco_res" class="control-label"></label>
                 <input asp-for="Preco_res" class="form-control" />
                 <span asp-validation-for="Preco_res" class="text-danger"></span>
@@ -39,6 +34,23 @@
                 </select>
                 <span asp-validation-for="PassageiroId" class="text-danger"></span>
             </div>
+            <br />
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+            <br class="clearBoth" />
+
+            <div class="outer-seat" id="div-inline"><div class="inner-seat" value="1"></div></div>
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+            <br class="clearBoth" />
+
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+            <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
+
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -17,10 +17,6 @@ namespace SistemaDeAgendamentoDeViagens.Models
         public DateTime? Data_res { get; set; }
 
         [Required]
-        [StringLength(20)]
-        public string Linha_aer_res { get; set; }
-
-        [Required]
         [Column(TypeName ="decimal(6,2)")]
         public decimal Preco_res { get; set; }
 

@@ -31,7 +31,7 @@ namespace SistemaDeAgendamentoDeViagens.Models.DataAnnotation
                     }
                 }
             }
-            return new ValidationResult("Data de chegada deve acontecer depois da Data de Partida");
+            return new ValidationResult("A data de chegada deve acontecer depois da data de Partida");
         }
         public void AddValidation(ClientModelValidationContext context)
         {

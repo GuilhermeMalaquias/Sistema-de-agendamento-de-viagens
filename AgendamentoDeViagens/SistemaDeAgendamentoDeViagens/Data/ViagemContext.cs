@@ -18,6 +18,7 @@ namespace SistemaDeAgendamentoDeViagens.Data
         public DbSet<Reserva> Reservas { get; set; }
         public DbSet<Voo> Voos { get; set; }
         public DbSet<Assento> Assentos { get; set; }
+        public DbSet<AssentoVoo> AssentoVoos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,10 +28,9 @@ namespace SistemaDeAgendamentoDeViagens.Data
             modelBuilder.Entity<Passageiro>()
                .HasIndex(b => b.CPF_pas)
                .IsUnique();
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<AssentoVoo>()
+                .HasKey(a => new { a.Numero_ass, a.VooId });
         }
-
-
-
-
     }
 }

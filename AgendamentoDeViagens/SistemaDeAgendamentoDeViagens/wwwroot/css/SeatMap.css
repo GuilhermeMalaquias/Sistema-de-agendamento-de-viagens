@@ -1,0 +1,41 @@
+﻿.outer-seat {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 4px;
+}
+
+.inner-seat {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    top: 100%;
+    left: 100%;
+    margin: -35px 0px 0px -35px;
+    background: #D8D8D8;
+    position: absolute;
+}
+
+#div-inline {
+    float: left;
+}
+
+.outer-seat:hover {
+    border-color: #3366CC;
+}
+
+#div-inline:hover .inner-seat {
+    background: #3366CC;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+.selected-innerColor {
+    background-color: #3366CC;
+}
+
+.selected-outerColor {
+    border-color: #3366CC;
+}

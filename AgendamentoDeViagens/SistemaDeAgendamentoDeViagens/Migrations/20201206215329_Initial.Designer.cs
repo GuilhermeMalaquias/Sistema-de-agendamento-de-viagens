@@ -10,7 +10,7 @@ using SistemaDeAgendamentoDeViagens.Data;
 namespace SistemaDeAgendamentoDeViagens.Migrations
 {
     [DbContext(typeof(ViagemContext))]
-    [Migration("20201206175106_Initial")]
+    [Migration("20201206215329_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

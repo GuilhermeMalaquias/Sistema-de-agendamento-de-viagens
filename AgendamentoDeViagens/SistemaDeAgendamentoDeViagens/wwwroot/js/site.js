@@ -3,14 +3,32 @@
 
 // Write your JavaScript code.
 
-function calcularIdade(Data_nasc_pas) {
-    var nascimento = Data_nasc_pas;
-    var dataNascimento = new Date(parseInt(nascimento[2], 10),
-        parseInt(nascimento[1], 10) - 1,
-        parseInt(nascimento[0], 10));
+//Buscar CEP
+jQuery(function ($) {
+    $("input[name='CEP_pas']").change(function () {
+        var cep_code = $(this).val();
+        if (cep_code.length <= 0) return;
+        $.get("https://ws.apicep.com/cep.json?", { code: cep_code }, function (result) {
+            if (result.status == 200) {
+                $("input[name='CEP_pas']").val(result.code);
+                $("input[name='Bairro_pas']").val(result.district);
+                $("input[name='Cidade_pas']").val(result.city);
+                $("input[name='UF_pas']").val(result.state);
+            }
+            else if (result.status == 404) {
+                $.get("https://cep.awesomeapi.com.br/json/" + cep_code, function (ret) {
+                   
+                   
+                    $("input[name='CEP_pas']").val(ret.cep);
+                    $("input[name='Bairro_pas']").val(ret.district);
+                    $("input[name='Cidade_pas']").val(ret.city);
+                    $("input[name='UF_pas']").val(ret.state);
+                });
+            }
+        });    
+    });
+});
 
-    var diferenca = Date.now() - dataNascimento.getTime();
-    var idade = new Date(diferenca);
-
-    return Math.abs(idade.getUTCFullYear() - 1970);
-}
+document.getElementById("Bairro_pas").readOnly = true
+document.getElementById("Cidade_pas").readOnly = true
+document.getElementById("UF_pas").readOnly = true

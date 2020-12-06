@@ -19,13 +19,8 @@ namespace SistemaDeAgendamentoDeViagens.Data
         public DbSet<Voo> Voos { get; set; }
         public DbSet<Assento> Assentos { get; set; }
 
-        public DbSet<AssentoVoo> AssentoVoos { get; set; }
+        
+        
 
-        protected override void OnModelCreating(ModelBuilder modelBiulder)
-        {
-            base.OnModelCreating(modelBiulder);
-            modelBiulder.Entity<AssentoVoo>()
-                .HasKey(m => new { m.Numero_ass, m.VooId });
-        }
     }
 }

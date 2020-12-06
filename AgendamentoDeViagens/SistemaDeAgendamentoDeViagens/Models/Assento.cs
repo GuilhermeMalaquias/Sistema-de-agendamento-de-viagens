@@ -8,16 +8,18 @@ namespace SistemaDeAgendamentoDeViagens.Models
 {
     public class Assento
     {
-      
         [Key]
+        public long? AssentoId { get; set; }
+
         [Required]
-        public long? Numero_ass { get; set; }
+        public int Numero_ass { get; set; }
 
         [Required]
         [StringLength(20)]
         public string Classe_ass { get; set; }
+        public virtual IList<Voo> Voos { get; set; }
 
-        public virtual ICollection<AssentoVoo> AssentoVoos { get; set; }
+
 
     }
 }

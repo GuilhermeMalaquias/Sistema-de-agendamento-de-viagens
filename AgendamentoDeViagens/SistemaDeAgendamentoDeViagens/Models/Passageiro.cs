@@ -12,22 +12,23 @@ namespace SistemaDeAgendamentoDeViagens.Models
         public long? PassageiroId { get; set; }
 
         [Required]
-        [StringLength(42)]
+        [StringLength(42, MinimumLength=3, ErrorMessage="O nome deve conter pelo menos 3 caracteres.")]
         public string Nome_pas { get; set; }
 
-        [Required]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
-        public DateTime? Data_nasc_pas { get; set; }
+        public DateTime Data_nasc_pas { get; set; }
 
+        [Required]
         [StringLength(1)]
         public string Sexo_pas { get; set; }
 
         [Required]
-        [StringLength(11)]
+        [StringLength(11, MinimumLength=11, ErrorMessage ="O CPF deve possuir 11 caracteres numericos")]
         public string CPF_pas { get; set; }
 
         [Required]
-        [StringLength(8)]
+        [StringLength(8, MinimumLength=8, ErrorMessage="O Passaporte deve conter duas letras e seis numeros")]
+        [RegularExpression(@"^[A-Za-z]{2}[0-9]{6}$", ErrorMessage ="O Passaporte deve conter duas letras seguida de 6 numeros")]
         public string Passaporte_pas { get; set; }
 
         [Required]
@@ -44,7 +45,7 @@ namespace SistemaDeAgendamentoDeViagens.Models
 
         [Required]
         [DataType(DataType.PostalCode, ErrorMessage = "CEP em formato inválido")]
-        public int CEP_pas { get; set; }
+        public string CEP_pas { get; set; }
 
         [Required]
         [StringLength(100)]

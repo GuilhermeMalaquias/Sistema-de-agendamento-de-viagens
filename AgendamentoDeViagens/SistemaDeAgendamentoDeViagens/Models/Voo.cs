@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeAgendamentoDeViagens.Models.DataAnnotation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,10 +30,11 @@ namespace SistemaDeAgendamentoDeViagens.Models
 
         [Required]
         [DataType(DataType.DateTime)]
+        [CompararDatas("Data_partida_voo")]
         public DateTime? Data_chegada_voo { get; set; }
 
         public virtual ICollection<Reserva> Reservas { get; set; }
 
-        public virtual ICollection<AssentoVoo> AssentoVoos { get; set; }
+        public virtual IList<Assento> Assentos { get; set; }
     }
 }

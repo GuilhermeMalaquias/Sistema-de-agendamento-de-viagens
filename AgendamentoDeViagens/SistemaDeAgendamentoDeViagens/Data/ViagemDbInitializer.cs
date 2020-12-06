@@ -9,7 +9,7 @@ namespace SistemaDeAgendamentoDeViagens.Data
     {
         public static void Initialize(ViagemContext context)
         {
-            //context.Database.EnsureDeleted();
+            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,8 +21,9 @@ namespace SistemaDeAgendamentoDeViagens.Models
         public string Linha_aer_res { get; set; }
 
         [Required]
-        [DisplayFormat(DataFormatString = "{0:C0}")]
-        public float? Preco_res { get; set; }
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal Preco_res { get; set; }
 
 
 

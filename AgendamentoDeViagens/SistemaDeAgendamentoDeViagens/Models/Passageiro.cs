@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace SistemaDeAgendamentoDeViagens.Models
         public string Bairro_pas { get; set; }
 
         [Required]
-        [DataType(DataType.PostalCode, ErrorMessage = "CEP em formato inválido")]
+        [StringLength(9, MinimumLength=8, ErrorMessage ="O CEP deve conter 8 caracteres numericos.")]
         public string CEP_pas { get; set; }
 
         [Required]

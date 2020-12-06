@@ -39,10 +39,11 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            catch(DbUpdateException)
+            catch (DbUpdateException)
             {
-                ModelState.AddModelError("", "Não foi possível inserir dados.");
+                ModelState.AddModelError("", "Não foi possível inserir dados. Confira seu passaporte ou o seu CPF!");
             }
+            
             return View(passageiro);
         }
 

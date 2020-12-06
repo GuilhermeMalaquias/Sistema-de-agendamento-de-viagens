@@ -19,8 +19,18 @@ namespace SistemaDeAgendamentoDeViagens.Data
         public DbSet<Voo> Voos { get; set; }
         public DbSet<Assento> Assentos { get; set; }
 
-        
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Passageiro>()
+                .HasIndex(b => b.Passaporte_pas)
+                .IsUnique();
+            modelBuilder.Entity<Passageiro>()
+               .HasIndex(b => b.CPF_pas)
+               .IsUnique();
+        }
+
+
+
 
     }
 }

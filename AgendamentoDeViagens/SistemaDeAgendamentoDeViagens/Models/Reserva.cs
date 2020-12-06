@@ -21,8 +21,7 @@ namespace SistemaDeAgendamentoDeViagens.Models
         public string Linha_aer_res { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]
-        [Column(TypeName = "decimal(10,2)")]
+        [Column(TypeName ="decimal(6,2)")]
         public decimal Preco_res { get; set; }
 
 

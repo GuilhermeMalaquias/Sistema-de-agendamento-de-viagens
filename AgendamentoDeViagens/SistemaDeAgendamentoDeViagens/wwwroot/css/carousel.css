@@ -104,12 +104,11 @@ body {
     color: white;
 }
 .nav-link {
+    font-family: 'Lobster', cursive;
     color: white;
-    text-transform: uppercase;
     transition: all 0.4s ease-in-out;
-    font-weight: 900;
     line-height: 20px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .nav-link:hover {
@@ -259,4 +258,50 @@ a.card-details:link{
 
 .text-right{
     color: white;
+}
+
+/* css dos formularios */
+
+#form-texto {
+    font-family: 'Lobster', cursive;
+    color:deepskyblue;
+}
+
+#form-card {
+    border-style: solid;
+    border-color: deepskyblue;
+    box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.46);
+}
+
+#form-capa {
+    background-color: skyblue;
+    font-family: 'Lobster', cursive;
+    color:white;
+}
+
+#form-btn {
+    font-family: 'Lobster', cursive;
+    color: deepskyblue;
+    border-color:deepskyblue;
+}
+
+#form-btn:hover {
+    font-family: 'Lobster', cursive;
+    color: white;
+    background-color: deepskyblue;
+}
+
+#form-row{
+    margin-top:5%;
+}
+
+/*css index voo*/
+
+#texto-card-voo {
+    font-family: 'Lobster', cursive;
+    color:darkblue;
+}
+
+.voo-criar{
+    margin-top: 5%;
 }

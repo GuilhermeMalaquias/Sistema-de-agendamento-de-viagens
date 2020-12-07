@@ -5,40 +5,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card text-center" id="form-card">
+            <div class="card-header" id="form-capa">
+                <h4> Novo Passageiro</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ReservaId" />
+                    <div class="form-group">
+                        <label class="control-label" id="form-texto">Data do agendemento</label>
+                        <input asp-for="Data_res" class="form-control" />
+                        <span asp-validation-for="Data_res" class="text-danger"></span>
+                    </div>
 
-<h4>Reserva</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ReservaId" />
-            <div class="form-group">
-                <label asp-for="Data_res" class="control-label"></label>
-                <input asp-for="Data_res" class="form-control" />
-                <span asp-validation-for="Data_res" class="text-danger"></span>
+                    <div class="form-group">
+                        <label class="control-label" id="form-texto">Preço</label>
+                        <input asp-for="Preco_res" class="form-control" />
+                        <span asp-validation-for="Preco_res" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" id="form-texto">Passageiro</label>
+                        <select asp-for="PassageiroId" class="form-control" asp-items="ViewBag.Passageiros"></select>
+                        <span asp-validation-for="Passageiro" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" id="form-texto">Voo</label>
+                        <select asp-for="VooId" class="form-control" asp-items="ViewBag.Voos"></select>
+                        <span asp-validation-for="Voo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-outline-primary btn-block" id="form-btn" />
+                    </div>
+                </form>
             </div>
-          
-            <div class="form-group">
-                <label asp-for="Preco_res" class="control-label"></label>
-                <input asp-for="Preco_res" class="form-control" />
-                <span asp-validation-for="Preco_res" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PassageiroId" class="control-label"></label>
-                <select asp-for="PassageiroId" class="form-control" asp-items="ViewBag.Passageiros"></select>
-                <span asp-validation-for="Passageiro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="VooId" class="control-label"></label>
-                <select asp-for="VooId" class="form-control" asp-items="ViewBag.Voos"></select>
-                <span asp-validation-for="Voo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 

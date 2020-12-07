@@ -247,8 +247,9 @@ a.card-details:link{
     height: 100%;
 }
 
-#pass-back-img{
+#pass-back-img {
     background-image: url(img/capa.png);
+    border-radius: 10px
 }
 
 #nome-pas{
@@ -283,12 +284,14 @@ a.card-details:link{
     font-family: 'Lobster', cursive;
     color: deepskyblue;
     border-color:deepskyblue;
+
 }
 
 #form-btn:hover {
     font-family: 'Lobster', cursive;
     color: white;
     background-color: deepskyblue;
+    transition: all 0.7s ease-in-out;
 }
 
 #form-row{

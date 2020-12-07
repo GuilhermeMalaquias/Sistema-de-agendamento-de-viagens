@@ -3,15 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div class="row-res" id="btn-criar">
-    <p>
-        <a class="btn btn-outline-primary" id="form-btn" asp-action="Create">Criar Novo</a>
-    </p>
-</div>
+
 
 @foreach (var item in Model)
 {
-    <div class="container">
+    <div class="container" >
         <div class="card-deck mb-3 text-center">
             <div class="card mb-4 shadow-sm">
                 <div class="card-header" id="form-capa">
@@ -28,6 +24,11 @@
                 </div>
                 <div class="card-body" id="card-pass">
                     <h1 class="card-title"> @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)</h1>
+                    @{
+                        string[] primeiro_elemento = item.Passageiro.Nome_pas.Split(' ');
+
+                    }
+                    <h1 class="card-title"> @Html.DisplayFor(modelItem => primeiro_elemento[0])</h1>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm">
@@ -35,6 +36,7 @@
                     <h4 class="my-0 font-weight-normal">Voo</h4>
                 </div>
                 <div class="card-body">
+                    <h1 class="card-title ">@Html.DisplayFor(modelItem => item.Voo.Origem_voo)</h1>
                     <h1 class="card-title ">@Html.DisplayFor(modelItem => item.Voo.Destino_voo)</h1>
                 </div>
             </div>
@@ -47,7 +49,7 @@
                 <a  asp-action="Details" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Detalhes</a>
             </div>
             <div class="col">
-                <a  asp-action="Edit" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Deletar</a>
+                <a  asp-action="Delete" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Deletar</a>
             </div>
         </div>
         

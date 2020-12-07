@@ -4,51 +4,53 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-primary" id="form-btn">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Data_res)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Preco_res)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Passageiro.Passaporte_pas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voo.Destino_voo)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Data_res)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Preco_res)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Voo.Destino_voo)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ReservaId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ReservaId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ReservaId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header" id="form-capa">
+                    <h4 class="my-0 font-weight-normal">Agendamento</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">R$ <small class="text-muted">@Html.DisplayFor(modelItem => item.Preco_res)</small></h1>
+                    <h1 class="card-text"> @Html.DisplayFor(modelItem => item.Data_res)</h1>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header" id="form-capa">
+                    <h4 class="my-0 font-weight-normal">Passageiro</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title"> @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)</h1>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header" id="form-capa">
+                    <h4 class="my-0 font-weight-normal">Voo</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title ">@Html.DisplayFor(modelItem => item.Voo.Destino_voo)</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a  asp-action="Edit" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Editar</a>
+            </div>
+            <div class="col">
+                <a  asp-action="Details" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Detalhes</a>
+            </div>
+            <div class="col">
+                <a  asp-action="Edit" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Deletar</a>
+            </div>
+        </div>
+    </div>
+}
+
+
+

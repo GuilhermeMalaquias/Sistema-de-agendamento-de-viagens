@@ -3,59 +3,42 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="voo-criar">
+    <p>
+        <a class="btn btn-outline-primary" id="form-btn" asp-action="Create">criar novo</a>
+    </p>
+</div>
 
-<h1>Index</h1>
+@foreach (var item in Model)
+{
+<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">World</strong>
+        <h3 class="mb-0" id="texto-card-voo">@Html.DisplayFor(modelItem => item.Origem_voo)</h3>
+        <div class="mb-1 text-muted"> @Html.DisplayFor(modelItem => item.Data_partida_voo)</div>
+        <h3 class="mb-0" id="texto-card-voo">@Html.DisplayFor(modelItem => item.Destino_voo)</h3>
+        <div class="mb-1 text-muted">@Html.DisplayFor(modelItem => item.Data_chegada_voo)</div>
+    </div>
+    <div class="col p-4 d-flex flex-column position-static">
+        <p class="card-text mb-auto">@Html.DisplayFor(modelItem => item.Descricao_voo)</p>
+        <div class="row">
+            <div class="col">
+                <a asp-action="Edit" asp-route-id="@item.VooId"><i class="fas fa-edit"></i></a>
+            </div>
+            <div class="col">
+                <a asp-action="Details" asp-route-id="@item.VooId"><i class="fas fa-info-square"></i></a>
+            </div>
+            <div class="col">
+                <a asp-action="Delete" asp-route-id="@item.VooId"><i class="fas fa-info"></i>></a>
+            </div>
+        </div>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Origem_voo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destino_voo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao_voo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Data_partida_voo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Data_chegada_voo)
-            </th>
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Origem_voo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Destino_voo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao_voo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data_partida_voo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data_chegada_voo)
-            </td>
-            
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.VooId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.VooId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.VooId">Delete</a>
-            </td>
-        </tr>
+    <div class="col d-none d-lg-block">
+        <img src="~/css/img/200x200-shifaaz-shamoon-qtbV_8P_Ksk-unsplash.jpg" alt="Alternate Text" height="210px" width="400px" />
+    </div>
+</div>
 }
-    </tbody>
-</table>
+
+
+

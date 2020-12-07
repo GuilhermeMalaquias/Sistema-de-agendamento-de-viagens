@@ -4,9 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-<p>
-    <a asp-action="Create" class="btn btn-outline-primary" id="form-btn" style="margin-top:5%;">Create New</a>
-</p>
 
 @foreach (var item in Model)
 {
@@ -25,7 +22,7 @@
                 <div class="card-header" id="form-capa">
                     <h4 class="my-0 font-weight-normal">Passageiro</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="card-pass">
                     <h1 class="card-title"> @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)</h1>
                     @{
                         string[] primeiro_elemento = item.Passageiro.Nome_pas.Split(' ');
@@ -44,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="btn-res">
             <div class="col">
                 <a  asp-action="Edit" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Editar</a>
             </div>
@@ -55,6 +52,7 @@
                 <a  asp-action="Delete" asp-route-id="@item.ReservaId" class="btn btn-lg btn-block btn-outline-primary" id="form-btn">Deletar</a>
             </div>
         </div>
+        
     </div>
 }
 

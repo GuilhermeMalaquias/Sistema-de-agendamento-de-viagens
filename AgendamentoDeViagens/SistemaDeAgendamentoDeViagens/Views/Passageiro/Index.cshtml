@@ -5,7 +5,7 @@
 }
 <div class="row" id="pass-cre">
     <div class="col-6">
-        <a asp-controller="Passageiro" asp-action="Create"><button type="button" class="btn btn-outline-primary" id="form-btn">criar novo</button></a>
+
     </div>
     
 </div>
@@ -26,7 +26,7 @@
                                 }@Html.DisplayFor(modelItem => primeiro_elemento[0])
                             </h4>
                             <p class="card-text"> @Html.DisplayFor(modelItem => item.CPF_pas)</p>
-                            <p class="card-text"> @Html.DisplayFor(modelItem => item.Email_pas)</p>
+                            <p class="card-text" id="card-email"> @Html.DisplayFor(modelItem => item.Email_pas)</p>
                         </div>
                         <div class="col d-flex align-items-end flex-column ">
                             <img class="p-2" src="~/css/img/user-icon-new.png" height="100" width="100" style="border-radius:50px;" />

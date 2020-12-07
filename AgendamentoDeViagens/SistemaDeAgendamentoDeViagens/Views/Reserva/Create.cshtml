@@ -3,70 +3,53 @@
 @{
     ViewData["Title"] = "Create";
 }
+<div class="main_index">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center" id="form-card">
+                <div class="card-header" id="form-capa">
+                    <h4> Novo Agendamento</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label class="control-label" id="form-texto">Data Agendamento</label>
+                            <input asp-for="Data_res" class="form-control" />
+                            <span asp-validation-for="Data_res" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" id="form-texto">Preço</label>
+                            <input asp-for="Preco_res" class="form-control" />
+                            <span asp-validation-for="Preco_res" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" id="form-texto">Voo</label>
+                            <select asp-for="VooId" class="form-control" asp-items="@(new SelectList(ViewBag.Voos,"VooId", "Destino_voo"))">
+                            </select>
+                            <span asp-validation-for="VooId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" id="form-texto">Passageiro</label>
+                            <select asp-for="PassageiroId" class="form-control" asp-items="@(new SelectList(ViewBag.Passageiros,"PassageiroId", "Passaporte_pas"))">
+                            </select>
+                            <span asp-validation-for="PassageiroId" class="text-danger"></span>
+                        </div>
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card text-center" id="form-card">
-            <div class="card-header" id="form-capa">
-                <h4> Novo Agendamento</h4>
-            </div>
-            <div class="card-body">
-                <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Data Agendamento</label>
-                        <input asp-for="Data_res" class="form-control" />
-                        <span asp-validation-for="Data_res" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Preço</label>
-                        <input asp-for="Preco_res" class="form-control" />
-                        <span asp-validation-for="Preco_res" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Voo</label>
-                        <select asp-for="VooId" class="form-control" asp-items="@(new SelectList(ViewBag.Voos,"VooId", "Destino_voo"))">
-                        </select>
-                        <span asp-validation-for="VooId" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Passageiro</label>
-                        <select asp-for="PassageiroId" class="form-control" asp-items="@(new SelectList(ViewBag.Passageiros,"PassageiroId", "Passaporte_pas"))">
-                        </select>
-                        <span asp-validation-for="PassageiroId" class="text-danger"></span>
-                    </div>
-                    <div class="justify-content-center">
-                        <br />
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <br class="clearBoth" />
-
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat" value="1"></div></div>
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <br class="clearBoth" />
-
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <div class="outer-seat" id="div-inline"><div class="inner-seat"></div></div>
-                        <br />
-                    </div>
-
-
-                    <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-outline-primary btn-block" id="form-btn"/>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-outline-primary btn-block" id="form-btn" />
+                        </div>
+                        <div>
+                            <a asp-action="Index" class="btn btn-outline-primary btn-block" role="button" id="form-btn">Cancel</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

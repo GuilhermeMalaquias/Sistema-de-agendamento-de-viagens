@@ -305,3 +305,31 @@ a.card-details:link{
 .voo-criar{
     margin-top: 5%;
 }
+
+.card-header{
+    text-transform: uppercase;
+}
+
+#card-pass{
+    text-transform: uppercase;
+}
+
+#card-email{
+    text-transform: lowercase;
+}
+
+.row-res{
+    margin-top: 5%;
+}
+
+.fas:hover {
+    color: #66ccff;
+}
+
+#btn-res{
+    margin-bottom: 10%;
+}
+
+#btn-criar{
+    margin-left: 1.5%;
+}

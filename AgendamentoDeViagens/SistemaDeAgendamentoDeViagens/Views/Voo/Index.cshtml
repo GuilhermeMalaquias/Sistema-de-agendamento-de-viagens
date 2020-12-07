@@ -5,7 +5,7 @@
 }
 <div class="voo-criar">
     <p>
-        <a class="btn btn-outline-primary" id="form-btn" asp-action="Create">criar novo</a>
+        <a class="btn btn-outline-primary" id="form-btn" asp-action="Create">Criar Novo</a>
     </p>
 </div>
 
@@ -26,10 +26,10 @@
                 <a asp-action="Edit" asp-route-id="@item.VooId"><i class="fas fa-edit"></i></a>
             </div>
             <div class="col">
-                <a asp-action="Details" asp-route-id="@item.VooId"><i class="fas fa-info-square"></i></a>
+                <a asp-action="Details" asp-route-id="@item.VooId"><i class="fas fa-info"></i></a>
             </div>
             <div class="col">
-                <a asp-action="Delete" asp-route-id="@item.VooId"><i class="fas fa-info"></i>></a>
+                <a asp-action="Delete" asp-route-id="@item.VooId"><i class="fas fa-trash-alt"></i></a>
             </div>
         </div>
     </div>

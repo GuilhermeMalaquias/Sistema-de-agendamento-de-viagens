@@ -21,7 +21,7 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Voos.OrderBy(c => c.VooId).ToListAsync());
+            return View();
         }
 
         public IActionResult Privacy()

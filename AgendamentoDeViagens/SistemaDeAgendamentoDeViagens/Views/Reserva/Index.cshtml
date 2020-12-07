@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<div id="btn-criar">
+    <p>
+        <a asp-action="Create" class="btn btn-outline-primary" id="form-btn" style="margin-top:5%;">Criar Novo</a>
+    </p>
+</div>
 
 @foreach (var item in Model)
 {

@@ -116,6 +116,9 @@ namespace SistemaDeAgendamentoDeViagens.Migrations
                     b.HasIndex("CPF_pas")
                         .IsUnique();
 
+                    b.HasIndex("Email_pas")
+                        .IsUnique();
+
                     b.HasIndex("Passaporte_pas")
                         .IsUnique();
 

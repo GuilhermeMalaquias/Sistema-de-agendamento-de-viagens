@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SistemaDeAgendamentoDeViagens.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -126,6 +126,12 @@ namespace SistemaDeAgendamentoDeViagens.Migrations
                 name: "IX_Passageiros_CPF_pas",
                 table: "Passageiros",
                 column: "CPF_pas",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Passageiros_Email_pas",
+                table: "Passageiros",
+                column: "Email_pas",
                 unique: true);
 
             migrationBuilder.CreateIndex(

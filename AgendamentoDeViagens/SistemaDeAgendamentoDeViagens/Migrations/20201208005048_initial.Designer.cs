@@ -10,8 +10,8 @@ using SistemaDeAgendamentoDeViagens.Data;
 namespace SistemaDeAgendamentoDeViagens.Migrations
 {
     [DbContext(typeof(ViagemContext))]
-    [Migration("20201206215329_Initial")]
-    partial class Initial
+    [Migration("20201208005048_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -116,6 +116,9 @@ namespace SistemaDeAgendamentoDeViagens.Migrations
                     b.HasKey("PassageiroId");
 
                     b.HasIndex("CPF_pas")
+                        .IsUnique();
+
+                    b.HasIndex("Email_pas")
                         .IsUnique();
 
                     b.HasIndex("Passaporte_pas")

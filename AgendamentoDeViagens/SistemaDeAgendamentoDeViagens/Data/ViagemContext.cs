@@ -28,6 +28,9 @@ namespace SistemaDeAgendamentoDeViagens.Data
             modelBuilder.Entity<Passageiro>()
                .HasIndex(b => b.CPF_pas)
                .IsUnique();
+            modelBuilder.Entity<Passageiro>()
+                .HasIndex(b => b.Email_pas)
+                .IsUnique();
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<AssentoVoo>()
                 .HasKey(a => new { a.Numero_ass, a.VooId });

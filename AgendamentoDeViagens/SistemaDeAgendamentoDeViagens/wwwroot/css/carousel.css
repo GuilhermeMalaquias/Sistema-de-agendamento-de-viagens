@@ -192,15 +192,10 @@ a.card-details:link{
     text-decoration:none;
 }
 
-#btn-pass-edit:hover {
-    color: limegreen;
-}
 #btn-pass-delete {
     margin-left: 5px;
 }
- #btn-pass-delete:hover {
-    color: red;
-}
+
 #pass-cre {
     margin-top: 5%;
 }
@@ -325,6 +320,9 @@ a.card-details:link{
     margin-top: 5%;
 }
 
+.fas{
+    color:black;
+}
 .fas:hover {
     color: #66ccff;
 }
@@ -335,4 +333,26 @@ a.card-details:link{
 
 #btn-criar{
     margin-left: 1.5%;
+}
+#menuicon{
+    color: white;
+}
+li{
+    list-style: none;
+}
+.fab{
+    color: black;
+}
+.fab:hover {
+    box-shadow: 5px #808080;
+    transition: all 0.4s ease-in-out;
+}
+.ircodigo{
+    text-decoration: none;
+    color: black;
+}
+.ircodigo:hover {
+    text-decoration: none;
+    color: #003399;
+    transition: all 0.4s ease-in-out;
 }

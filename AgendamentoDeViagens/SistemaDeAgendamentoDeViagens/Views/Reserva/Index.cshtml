@@ -24,10 +24,10 @@
             </div>
             <div class="card mb-4 shadow-sm">
                 <div class="card-header" id="form-capa">
-                    <h4 class="my-0 font-weight-normal">Passageiro</h4>
+                    <h4 class="my-0 font-weight-normal" >Passageiro</h4>
                 </div>
-                <div class="card-body" id="card-pass">
-                    <h1 class="card-title"> @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)</h1>
+                <div class="card-body ">
+                    <h1 class="card-title" style="text-transform: uppercase;"> @Html.DisplayFor(modelItem => item.Passageiro.Passaporte_pas)</h1>
                     @{
                         string[] primeiro_elemento = item.Passageiro.Nome_pas.Split(' ');
 

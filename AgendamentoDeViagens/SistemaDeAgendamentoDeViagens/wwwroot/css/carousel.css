@@ -204,8 +204,8 @@ a.card-details:link{
     margin-top: 5%;
 }
 #card-nome {
-    text-transform: uppercase;
-    color: #003399;
+    font-family: 'Lobster', cursive;
+    color:darkblue;
 }
 
 #radius-pac {
@@ -247,9 +247,9 @@ a.card-details:link{
     border-radius: 10px
 }
 
-#nome-pas{
+#nome-pas {
+    font-family: 'Lobster', cursive;
     color: white;
-    text-transform: uppercase;
 }
 
 .text-right{
@@ -355,4 +355,27 @@ li{
     text-decoration: none;
     color: #003399;
     transition: all 0.4s ease-in-out;
+}
+
+#delete-btn {
+    font-family: 'Lobster', cursive;
+    color: indianred;
+    border-color: indianred;
+}
+
+#delete-btn:hover {
+    font-family: 'Lobster', cursive;
+    color: white;
+    background-color: indianred;
+    transition: all 0.7s ease-in-out;
+}
+
+#del-text {
+    font-family: 'Lobster', cursive;
+    color: deepskyblue;
+}
+
+#nome-site {
+    font-family: 'Lobster', cursive;
+    color: white;
 }

@@ -5,51 +5,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-    <div class="col-md-6">
-        <div class="card text-center" id="form-card">
-            <div class="card-header" id="form-capa">
-                <h4> Editar Voo</h4>
-            </div>
-            <div class="card-body">
-                <form asp-action="Edit">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="VooId" />
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Origem</label>
-                        <input asp-for="Origem_voo" class="form-control" />
-                        <span asp-validation-for="Origem_voo" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Destino</label>
-                        <input asp-for="Destino_voo" class="form-control" />
-                        <span asp-validation-for="Destino_voo" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Descrição</label>
-                        <input asp-for="Descricao_voo" class="form-control" />
-                        <span asp-validation-for="Descricao_voo" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Data da decolagem</label>
-                        <input asp-for="Data_partida_voo" class="form-control" />
-                        <span asp-validation-for="Data_partida_voo" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" id="form-texto">Data do pouso</label>
-                        <input asp-for="Data_chegada_voo" class="form-control" />
-                        <span asp-validation-for="Data_chegada_voo" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Save" class="btn btn-outline-primary btn-block" id="form-btn" />
-                    </div>
-                    <div>
-                        <a asp-action="Index" class="btn btn-outline-primary btn-block" role="button" id="form-btn">Cancel</a>
-                    </div>
-                </form>
-            </div>
+<div class="row justify-content-center">
+<div class="col-md-6"  id="form-row">
+    <div class="card text-center" id="form-card">
+        <div class="card-header" id="form-capa">
+            <h4> Editar Voo</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="VooId" />
+                <div class="form-group">
+                    <label class="control-label" id="form-texto">Origem</label>
+                    <input asp-for="Origem_voo" class="form-control" />
+                    <span asp-validation-for="Origem_voo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" id="form-texto">Destino</label>
+                    <input asp-for="Destino_voo" class="form-control" />
+                    <span asp-validation-for="Destino_voo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" id="form-texto">Descrição</label>
+                    <input asp-for="Descricao_voo" class="form-control" />
+                    <span asp-validation-for="Descricao_voo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" id="form-texto">Data da decolagem</label>
+                    <input asp-for="Data_partida_voo" class="form-control" />
+                    <span asp-validation-for="Data_partida_voo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" id="form-texto">Data do pouso</label>
+                    <input asp-for="Data_chegada_voo" class="form-control" />
+                    <span asp-validation-for="Data_chegada_voo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-outline-primary btn-block" id="form-btn" />
+                </div>
+                <div>
+                    <a asp-action="Index" class="btn btn-outline-primary btn-block" role="button" id="form-btn">Cancel</a>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 
 

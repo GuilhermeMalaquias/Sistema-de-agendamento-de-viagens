@@ -4,44 +4,61 @@
     ViewData["Title"] = "Details";
 }
 
-<h1 style="margin-top: 5%;">Details</h1>
+<h1 style="margin-top: 5%;"></h1>
 
-<div>
-    <h4>Voo</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Origem_voo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Origem_voo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Destino_voo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Destino_voo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data_partida_voo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data_partida_voo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data_chegada_voo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data_chegada_voo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao_voo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descricao_voo)
-        </dd>
-    </dl>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="card border-primary mb-3">
+                <div class="card-header" id="form-capa">Origem </div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Origem_voo)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card border-primary mb-3">
+                <div class="card-header" id="form-capa">Destino </div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Destino_voo)</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="card border-primary mb-3" >
+                <div class="card-header" id="form-capa">Data da decolagem</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Data_partida_voo)</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card border-primary mb-3" >
+                <div class="card-header" id="form-capa">Data do pouso</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">@Html.DisplayFor(model => model.Data_chegada_voo)</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-primary mb-3">
+                <div class="card-header" id="form-capa"> bairro</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title"> @Html.DisplayFor(model => model.Descricao_voo)</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.VooId">Edit</a> |
     <a asp-action="Index">Back to List</a>

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top: 5%;">
         <div class="col-md-6">
             <div class="card text-center" id="form-card">
                 <div class="card-header" id="form-capa">
@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label" id="form-texto">Passageiro</label>
-                            <select asp-for="PassageiroId" class="form-control" asp-items="ViewBag.Passageiros"></select>
+                            <select asp-for="PassageiroId" class="form-control" style="text-transform: uppercase;" asp-items="ViewBag.Passageiros"></select>
                             <span asp-validation-for="Passageiro" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -36,8 +36,8 @@
                             <span asp-validation-for="Voo" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Save" class="btn btn-outline-primary btn-block" id="form-btn" />
-                            <a asp-action="Index" class="btn btn-outline-primary btn-block" id="form-btn" role="button">Cancel</a>
+                            <input type="submit" value="Salvar" class="btn btn-outline-primary btn-block" id="form-btn" />
+                            <a asp-action="Index" class="btn btn-outline-primary btn-block" id="form-btn" role="button">Cancelar</a>
                         </div>
                     </form>
             </div>

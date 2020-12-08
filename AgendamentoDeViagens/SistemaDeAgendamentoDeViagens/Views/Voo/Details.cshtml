@@ -57,9 +57,12 @@
             </div>
         </div>
     </div>
+    <div class="form-group">
+        <a asp-action="Edit" asp-route-id="@Model.VooId "class="btn btn-outline-primary btn-block" id="form-btn">Editar</a>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-outline-primary btn-block" role="button" id="form-btn">Cancelar</a>
+    </div>
 </div>
 
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.VooId">Editar</a> |
-    <a asp-action="Index">Voltar</a>
-</div>
+

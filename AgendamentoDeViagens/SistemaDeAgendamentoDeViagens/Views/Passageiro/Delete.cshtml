@@ -31,11 +31,11 @@
                     @Html.DisplayFor(model => model.CPF_pas)
                 </h3>
                 <h4 id="del-text">Passaporte</h4>
-                <h3>
+                <h3 style="text-transform: uppercase;">
                     @Html.DisplayFor(model => model.Passaporte_pas)
                 </h3>
                 <h4 id="del-text">UF</h4>
-                <h3>
+                <h3 >
                     @Html.DisplayFor(model => model.UF_pas)
                 </h3>
                 <h4 id="del-text">Cidade</h4>
@@ -56,7 +56,7 @@
                 </h3>
                 <form asp-action="Delete">
                     <input type="hidden" asp-for="PassageiroId" />
-                    <input type="submit" value="Delete" class="btn btn-outline-primary btn-block" id="delete-btn" />
+                    <input type="submit" value="Deletar" class="btn btn-outline-primary btn-block" id="delete-btn" />
                     <a class="btn btn-outline-primary btn-block" id="form-btn" asp-action="Index">Cancelar</a>
 
                 </form>

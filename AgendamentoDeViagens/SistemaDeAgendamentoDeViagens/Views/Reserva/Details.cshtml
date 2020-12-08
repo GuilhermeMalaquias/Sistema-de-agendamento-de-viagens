@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-6">
             <div class="card border-primary mb-3">
-                <div class="card-header" id="form-capa">Origem </div>
+                <div class="card-header" id="form-capa">Data da Reserva</div>
                 <div class="card-body text-primary">
                     <h5 class="card-title"> @Html.DisplayFor(model => model.Data_res)</h5>
                 </div>
@@ -18,7 +18,7 @@
         </div>
         <div class="col-6">
             <div class="card border-primary mb-3">
-                <div class="card-header" id="form-capa">Destino </div>
+                <div class="card-header" id="form-capa">Valor</div>
                 <div class="card-body text-primary">
                     <h5 class="card-title"> @Html.DisplayFor(model => model.Preco_res)</h5>
                 </div>
@@ -30,9 +30,9 @@
     <div class="row">
         <div class="col-6">
             <div class="card border-primary mb-3">
-                <div class="card-header" id="form-capa">Origem </div>
+                <div class="card-header" id="form-capa">Passaporte</div>
                 <div class="card-body text-primary">
-                    <h5 class="card-title">   @Html.DisplayFor(model => model.Passageiro.Passaporte_pas)</h5>
+                    <h5 class="card-title" style="text-transform:uppercase;">@Html.DisplayFor(model => model.Passageiro.Passaporte_pas)</h5>
                 </div>
             </div>
         </div>

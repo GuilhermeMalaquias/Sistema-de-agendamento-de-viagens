@@ -379,3 +379,7 @@ li{
     font-family: 'Lobster', cursive;
     color: white;
 }
+
+#icon:hover {
+    color: deepskyblue;
+}

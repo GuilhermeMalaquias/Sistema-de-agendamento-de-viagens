@@ -22,6 +22,22 @@ namespace SistemaDeAgendamentoDeViagens.Controllers
             return View(await _context.Passageiros.OrderBy(c => c.Nome_pas).ToListAsync());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Index(string searchTerm)
+        {
+            ViewData["TermSearch"] = searchTerm;
+
+            var passageiros = from b in _context.Passageiros
+                       select b;
+            if (!String.IsNullOrEmpty(searchTerm))
+            {
+                passageiros = passageiros.Where(b => b.Nome_pas.Contains(searchTerm));
+                                                       
+            }
+
+            return View(await passageiros.AsNoTracking().ToListAsync());
+        }
+
         public IActionResult Create()
         {
             return View();
